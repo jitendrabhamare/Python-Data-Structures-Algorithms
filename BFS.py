@@ -33,7 +33,7 @@ def bfs_search(root_node, search_value):
     queue = [root_node]
 
     while len(queue) > 0:
-        # Remove first element of queue
+        # Pop first element of queue
         current_node = queue.pop(0)
         visited.append(current_node)
 
