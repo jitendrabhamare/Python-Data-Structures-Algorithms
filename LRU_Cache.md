@@ -18,3 +18,6 @@
 #### Space complexity
 - If cache capcity is n (i.e. input size), each node has 4 attributes (4), it creates DLL with n nodes (4 * n) 
   and dict (1 + 4 * n) with n key-value pairs. Space increase linearly with respect to n. Therefore, spece complexity is constant * n i.e. `O(n)`.
+  
+### Code
+[LRU Cache](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/LRU_Cache.py)
