@@ -1,3 +1,6 @@
+# Least Recently Used Cache with O(1) efficiency
+# Author: Jitendra Bhamare
+
 # DNode object that has key and value as attributes
 class DNode:
     def __init__(self, key, value):
