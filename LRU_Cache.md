@@ -1,4 +1,4 @@
-# Least Recently Used Cache 
+# Least Recently Used Cache ***(with O(1) efficiency)***
 
 ### Logic Design
 - To design LRU Cache two data structures are used, namely Doubly LinkedList (DLL) and Dictionary. 
