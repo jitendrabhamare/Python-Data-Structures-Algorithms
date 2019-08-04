@@ -1,12 +1,14 @@
-###### Problem 3: Huffman Coding ############################
+# Huffman Coding ############################
+
+### Problem
+
+### Design Logic
 - Created a node class- 'HuffmanNode' that has following properties. - char, frequency, left child and right child. 
 - Created a class- 'HuffmanCoding' that include methods including huffman_encoding, huffman_decoding and all required helper methods. 
 - steps for encoding and decoding
-    step 1: The 'build_freq_table()' method takes a string and determine the relevant frequencies of the characters store them in a dictionary, 
-            also create a HuffmanNode object of each item. 
-            
-            Time complexity: O(n). Where n is number of character in an input string in worst case scenario, no char is repeated.
-            Space complexity: Function of 2 * n. Hence O(n)
+    step 1: The 'build_freq_table()' method takes a string and determine the relevant frequencies of the characters store them in a dictionary, also create a HuffmanNode object of each item. 
+ Time complexity: O(n). Where n is number of character in an input string in worst case scenario, no char is repeated.
+ Space complexity: Function of 2 * n. Hence O(n)
 
     step 2: Created a helper 'sort_node_list()' method. 
             - It converts Huffman node objects into tuples (char, freq, left, right) - [TC: O(n), SC: O(n)]
