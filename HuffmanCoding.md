@@ -21,7 +21,10 @@
 >
 > [Huffman Tree Generator](http://huffman.ooz.ie/)
 
-### Design Logic (with time complexity)
+### Solution
+[HuffmanCoding.py](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/HuffmanCoding.py)
+
+### Design Logic Explanation (with Time and Space Complexity Analysis)
 - Created a node class- 'HuffmanNode' that has following properties. - char, frequency, left child and right child. 
 - Created a class- 'HuffmanCoding' that include methods including huffman_encoding, huffman_decoding and all required helper methods. 
 
@@ -64,5 +67,4 @@
 - **Note**: Using inbuild priority queue data structure time complexity can be improved (as sorting could have been avoided.)
           However, I preferred using all data-structures using scratch and decided to use list and sort approach. 
 
-### Solution
-[HuffmanCoding.py](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/HuffmanCoding.py)
+
