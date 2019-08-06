@@ -48,11 +48,11 @@
     - SC: size of dict which is const * n. hence SC: O(n)
     - 'generate_bitsteam()' creates encoded bit stream using corresponding dictionary keys. TC- O(n), SC - const*n = O(n)
     
-5. 'huffman_encoding()' method use all the helper function. 
+5. The 'huffman_encoding()' method use all the helper function. 
     - TC: Overall Time complexity from step 1-4 is O(n^2.logn)
     - SC: For step 1-4 is O(n^2)
     
-6. huffman_decioding()' uses reverse dictionary values to decode bitstream into a text value.
+6. The 'huffman_decioding()' uses reverse dictionary values to decode bitstream into a text value.
    - TC: O(n)
    - SC: O(n)
 
@@ -62,4 +62,4 @@
           However, I preferred using all data-structures using scratch and decided to use list and sort approach. 
 
 ### Solution
-[huffman_coding.py](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/HuffmanCoding.py)
+[HuffmanCoding.py](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/HuffmanCoding.py)
