@@ -56,8 +56,10 @@
    - TC: O(n)
    - SC: O(n)
 
-- Thus Overall Time complexity: `O(n^2.logn)` and space complexity is `O(n^2)`
+- Thus **Overall Time complexity**: `O(n^2.logn)` and space complexity is `O(n^2)`
 
 - **Note**: Using inbuild priority queue data structure time complexity can be improved (as sorting could have been avoided.)
           However, I preferred using all data-structures using scratch and decided to use list and sort approach. 
 
+### Solution
+[huffman_coding.py](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/HuffmanCoding.py)
