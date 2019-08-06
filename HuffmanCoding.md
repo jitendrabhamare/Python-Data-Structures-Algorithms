@@ -19,7 +19,7 @@
 > 
 > You then will need to create encoding, decoding, and sizing schemas.
 
-### Design Logic
+### Design Logic (with time complexity)
 - Created a node class- 'HuffmanNode' that has following properties. - char, frequency, left child and right child. 
 - Created a class- 'HuffmanCoding' that include methods including huffman_encoding, huffman_decoding and all required helper methods. 
 - steps for encoding and decoding
