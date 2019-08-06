@@ -17,7 +17,9 @@
 > - Encode the text into its compressed form.
 > - Decode the text from its compressed form.
 > 
-> You then will need to create encoding, decoding, and sizing schemas.
+> The aim is to create encoding, decoding, and sizing schemas.
+>
+> [Huffman Tree Generator](http://huffman.ooz.ie/)
 
 ### Design Logic (with time complexity)
 - Created a node class- 'HuffmanNode' that has following properties. - char, frequency, left child and right child. 
