@@ -7,4 +7,4 @@
 
 ### Algorithms 
 - [Graph: Breadth First Search (BFS)](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/BFS.py)
-- Kosaraju's two-pass Algorithm 
+- [Kosaraju's Two-Pass Algorithm](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/Kosaraju-scc.md)
