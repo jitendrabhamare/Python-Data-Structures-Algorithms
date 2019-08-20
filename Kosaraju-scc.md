@@ -2,7 +2,7 @@
 
 ***
 <ins>Theorem</ins></br>
-Given a directed graph G, Kosaraju's Two-Pass Algorithm can computer Strongly Connected Components (SCC) in **O(m+n)** time.</br>
+Given a directed graph G, Kosaraju's Two-Pass Algorithm can compute Strongly Connected Components (SCC) in **O(m+n)** time.</br>
 Where **m**: number of edges, **n**: number of nodes
 
 ***
