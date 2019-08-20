@@ -6,4 +6,5 @@
 - [Huffman Coding](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/HuffmanCoding.md)
 
 ### Algorithms 
-[Breadth First Search (BFS)](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/BFS.py)
+- [Graph: Breadth First Search (BFS)](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/BFS.py)
+- Kosaraju's two-pass Algorithm 
