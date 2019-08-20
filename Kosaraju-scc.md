@@ -11,6 +11,7 @@ The Strognly Connected Components (SCC) of a directed Grap G are the equivalence
 
 > u ~ v  <==> there exists a path from u to v and a path from v to u in G. 
 
+***
 <ins>Algorithm Design</ins></br>
 - **Key** is to find right place to call Depth First Algorithm on Graph.i.e to find "leader" node in each SCC.</br>
 - In orders to find leader-node, finishing time of a reverse-graph is computed. </br>
