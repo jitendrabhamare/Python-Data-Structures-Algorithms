@@ -21,7 +21,8 @@ The Strognly Connected Components (SCC) of a directed Grap G are the equivalence
     3. Rus DFS-loop on G to discover SCC one-by-one. 
     
 ***
-<ins>Solution></ins><br>
+<ins>Solution</ins></br>
+- [Here](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/scc_recursive.py)
 
 
   
