@@ -6,13 +6,13 @@ Given a directed graph G, Kosaraju's Two-Pass Algorithm can compute Strongly Con
 Where **m**: number of edges, **n**: number of nodes
 
 ***
-<ins>Strognly Connected Components: Definition</ins></br>
+<ins>**Strognly Connected Components: Definition**</ins></br>
 The Strognly Connected Components (SCC) of a directed Grap G are the equivalence classes of the following relation: 
 
 > u ~ v  <==> there exists a path from u to v and a path from v to u in G. 
 
 ***
-<ins>Algorithm Design</ins></br>
+<ins>**Algorithm Idea**</ins></br>
 - **Key** is to find right place to call Depth First Algorithm on Graph.i.e to find "leader" node in each SCC.</br>
 - In orders to find leader-node, finishing time of a reverse-graph is computed. </br>
 - Following are algorithm steps: </br>
@@ -21,7 +21,7 @@ The Strognly Connected Components (SCC) of a directed Grap G are the equivalence
     3. Rus DFS-loop on G to discover SCC one-by-one. 
     
 ***
-<ins>Solution</ins></br>
+<ins>**Solution**</ins></br>
 - [Here](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/scc_recursive.py)
 
 
