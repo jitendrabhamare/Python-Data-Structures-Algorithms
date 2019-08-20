@@ -1,12 +1,12 @@
 ## Kosaraju's Algorithm to find strongly connected components (SCC)
+## Author: Jitendra Bhamare
 
 import sys, threading
 sys.setrecursionlimit(800000)
 threading.stack_size(67108864)
 
 def main():
-    # Load an input text file and generate graph and reversed graph from it. 
-    #input_file = open("scc-small.txt", "r")
+    ###  Load an input text file and generate graph and reversed graph from it. 
     input_file = open("SCC.txt", "r")
     data = input_file.readlines()
     # Declare num of nodes from input files. always define with one extra node
@@ -20,10 +20,7 @@ def main():
         graph[int(item[0])] += [int(item[1])]
         rgraph[int(item[1])] += [int(item[0])]
 
-    #print("graph: {}".format(graph))
-    #print("rev-graph: {}".format(rgraph))
-
-    ## Intialize lists for pass1
+    ### Intialize lists for pass1
     explored = [False] * num_nodes
     leader = [0] * num_nodes
     #order = [0] * num_nodes
@@ -58,11 +55,6 @@ def main():
     ## Run DFS_Loop on rev graph
     pass1_list = range(num_nodes-1, 0, -1)
     DFS_Loop(rgraph, pass1_list)
-
-    #print("finishing order: {}".format(order))
-    #print("leader : {}".format(leader))
-    #print("explored : {}".format(explored))
-
 
     ## Intialize lists for pass2
     order.reverse()
