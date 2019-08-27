@@ -13,11 +13,11 @@
 > parent of i = Floor value of i/2. </br>
 
 ### Heap Operations
-1. Push
+1. **Push**
   - Stick a new node (k) at the end of the last level.
   - bubbble-up (heapify_up) until heap property is restored. 
   
-2. Pop 
+2. **Pop**
   - Delete Root
   - Move last leaf to be new root
   - Iteratively bubble-down (heapify_down) until heap property is restored. 
