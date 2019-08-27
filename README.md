@@ -2,6 +2,7 @@
 
 ### Data Structures
 
+- [MinHeap](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/min-heap.md)
 - [Least Recently Used (LRU) Cache](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/LRU_Cache.md) *with O(1) efficiency* 
 - [Huffman Coding](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/HuffmanCoding.md)
 
