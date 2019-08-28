@@ -32,6 +32,10 @@ in the right sub-tree have keys larger than the node key.
 
 <ins>Note</ins>: Dynamic Dataset which involves lots of insert and delete operations, BST is better choice over sorted arrays. However, for static data, sorted arrays have upper hand.</br>
 
+*** 
+<ins>**BST Implementation**</ins>
+- [here](./binary-search-tree.py)
+
 
 
     
