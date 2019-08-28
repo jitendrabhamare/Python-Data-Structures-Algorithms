@@ -17,6 +17,11 @@ in the right sub-tree have keys larger than the node key.
 ***
 <ins>**Time-complexities Comparion of Sorted Arrays and BST Operations**</ins>
 
+| Operations    | SortedArray-Running Time  |   BST-Running Time        |
+|---------------|:-------------------------:|:-------------------------:|
+| Search        |   O(log(n))               |   O(log(n))               |
+| Select (given order statistic i) | O(1)   |   O(log(n))               |
+
 
 
     
