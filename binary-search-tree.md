@@ -1,6 +1,10 @@
 # Binary Search Tree (BST)
 
 ***
+<ins>**Example**</ins></br>
+<img src="https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/Binary_search_tree.png" alt="drawing" width="250"/>
+
+***
 <ins>**Properties**</ins>
 1. Exactly one node per key (value).
 2. Each node has 3 attributes
