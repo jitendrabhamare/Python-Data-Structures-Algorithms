@@ -21,6 +21,14 @@ in the right sub-tree have keys larger than the node key.
 |---------------|:-------------------------:|:-------------------------:|
 | Search        |   O(log(n))               |   O(log(n))               |
 | Select (given order statistic i) | O(1)   |   O(log(n))               |
+| Min/Max       |   O(1)                    |   O(log(n))               |
+| Predecessor/Successor |   O(1)            |   O(log(n))               |
+| Rank*         | O(log(n))                 |   O(log(n))               |
+| Output in Sorted Order|   O(n)            |   O(log(n))               |
+| Insert        |   O(n)                    |   O(log(n))               |
+| Delete        |   O(n)                    |   O(log(n))               |
+
+*\*Rank is number of keys less than or equal to a given value. Thus for Sprted Array, do binary search and report position. 
 
 
 
