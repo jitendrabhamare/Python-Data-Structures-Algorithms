@@ -79,14 +79,14 @@ class Tree():
     def get_root(self):
         return self.root
 
-    def compare(self, node1, node2):
-        """  0: node1 eq node2 
-            -1: node1 <  node2
-             1: node1 >  node2
+    def compare(self, node, new_node):
+        """  0: new_node eq node 
+            -1: new_node <  node
+             1: new_node >  node
         """
-        if node1.get_key() == node2.get_key():
+        if new_node.get_key() == node.get_key():
             return 0
-        elif node1.get_key() < node2.get_key():
+        elif new_node.get_key() < node.get_key():
             return -1
         else:
             return 1
@@ -128,6 +128,11 @@ class Tree():
 
     ## Insert a new node in BST
     def insert(self,new_key):
+        """
+        Used while loop to implement. 
+        Can also use recursion instead, as used in search function. 
+        Compare the insert-node with each node and accordingly traverse through the tree and insert 
+        """
         new_node = Node(new_key)
         node = self.get_root()
         if node == None:
@@ -155,8 +160,66 @@ class Tree():
                     node.set_right_child(new_node)
                     break # inserted node, so stop looping          
 
+    def get_min(self, node=None):
+        """
+        - Get min from the node. By default, it starts from the root. 
+        - Start at the node. 
+        - Follow left child pointer until you cannot anymore.
+        - Return the last key found
+        """
+        if node is None:
+            node = self.get_root()
+        while(node.get_left_child()):
+            node = node.get_left_child()
+
+        return node.get_key()
 
 
+    def get_max(self, node=None):
+        """
+        - Get max from the node. By default, it starts from the root. 
+        - Start at the node. 
+        - Follow right child pointer until you cannot anymore.
+        - Return the last key found
+        """
+        if node is None:
+            node = self.get_root()
+        while(node.get_right_child()):
+            node = node.get_right_child()
+
+        return node.get_key()
+
+    def get_successor(self, node, key):
+        """ 
+        - If node has right subtree, return max key from subtree
+        - 
+        
+        change to iterative
+        add tentative succ 
+        """
+
+        ## Base case
+        if node is None:
+            return
+
+        ## If key is present at node
+        if node.get_key() == key:
+            # the min value of right subtree is successor
+            if node.has_right_child():
+                succ = self.get_min(node.get_right_child())
+                return succ
+
+
+        ## If key is smaller than node-key, look into left subtree
+        elif key < node.get_key():
+            return self.get_successor(node.get_left_child(), key)
+
+        ## If key is larger than node-key, look into right subtree
+        else:
+            return self.get_successor(node.get_right_child(), key)
+
+
+    ### Print Tree (with the help of queue DS)
     def __repr__(self):
         level = 0
         q = Queue()
@@ -199,15 +262,36 @@ class Tree():
 #---------------------------------------------------------------------------------------------
 
 tree = Tree()
-tree.insert(5)
+tree.insert(8)
+tree.insert(3)
+tree.insert(10)
+tree.insert(1)
 tree.insert(6)
+tree.insert(14)
 tree.insert(4)
-tree.insert(2)
+tree.insert(7)
+tree.insert(13)
 print(f"""
 search for 8: {tree.search(8)}
 search for 2: {tree.search(2)}
 """)
 print(tree)
+
+## Get root
+root = tree.get_root()
+
+
+## Find min/max of tree
+min_val = tree.get_min()
+max_val = tree.get_max()
+print("Min-val: {}".format(min_val))
+print("Max-val: {}".format(max_val))
+
+## Get Successor
+succ1 = tree.get_successor(root, 7)
+print(succ1)
+
+
 
 
 
