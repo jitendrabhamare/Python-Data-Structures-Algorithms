@@ -193,9 +193,9 @@ class Tree():
         """ 
         - If node has right subtree, return max key from subtree
         - 
-        
-        change to iterative
-        add tentative succ 
+        TODO
+        - change to iterative
+        - add tentative succ 
         """
 
         ## Base case
