@@ -160,6 +160,94 @@ class Tree():
                     node.set_right_child(new_node)
                     break # inserted node, so stop looping          
 
+    def delete(self, new_key):
+        """
+        -  binary search for new_key (k) 
+        1. Easy case: if k has no children
+           - Just delete k's node from tree. Done.
+        2. Medium case: if k's node has one child
+           - Just "splice out" k's node.
+           - Unique child assumes position previously held by k's node
+        3. Difficult case: k's node has two children
+           - Compute k'e predecessor (l).
+           - swap k with l.
+        """
+        new_node = Node(new_key)
+        node = self.get_root()
+        parent = None
+
+        # base case
+        if node is None:
+            return
+
+        while (node):
+            comparison = self.compare(node, new_node)
+            
+            if comparison == 0:
+                ## perform deletion if match
+                # Easy case
+                if node.left == None and node.right == None:
+                    if parent.left == node:
+                        parent.left = None
+                    else:
+                        parent.right = None
+                    break
+
+                # Medium case
+                if node.left and node.right == None:
+                    if parent.left == node:
+                        parent.left = node.left
+                    else:
+                        parent.right = node.left
+                    break
+
+                if node.left == None and node.right:
+                    if parent.left == node:
+                        parent.left = node.right
+                    else:
+                        parent.right = node.right
+                    break
+
+                # Difficult case
+                if node.left and node.right:
+                    print("yoyoyo")
+                    # Find pred of left subtree
+                    pred_parent = node
+                    pred = node.left
+                    while(pred.right):
+                        pred_parent = pred
+                        pred = pred.right
+                    print("pred: {}".format(pred))
+                    
+                    # swap node and pred
+                    pred.right = node.right
+                    pred.left = node.left
+                    if pred_parent.right == pred:
+                        pred_parent.right = None    
+                    else:
+                        pred_parent.left = None
+
+
+                    if parent.left == node:
+                        parent.left = pred
+                    else:
+                        parent.right = pred
+
+                    break
+
+
+            elif comparison == -1:
+                ## go left
+                parent = node
+                node = node.get_left_child()
+
+            else: 
+                ## go right
+                parent = node
+                node = node.get_right_child()
+        
+
+
     def get_min(self, node=None):
         """
         - Get min from the node. By default, it starts from the root. 
@@ -191,32 +279,93 @@ class Tree():
 
     def get_successor(self, node, key):
         """ 
-        - If node has right subtree, return max key from subtree
-        - 
-        
-        change to iterative
-        add tentative succ 
+        - This method finds successor of a node k with given key without the parent pointer.
+        - Algorithm steps
+            1. Starting from root node, the algorithm keeps track of 'speculative successor' for the case
+            where k's right subtree is empty. 
+            2. Easy Case:
+                If k's right subtree is non-empty,
+                It returns min-key in the right subtree.
+            3. Otherwise- difficult case:
+                Speculation is correct, and it returns speculative successor as a successor. 
+        - Benefit of speculation: When we reach difficult case, we already have an answer. We need not redo 
+          iteration to find successor from parents.
         """
+        speculative_succ = None
+        succ = None
+        while (node):
+            ## If key is present at node
+            if node.get_key() == key:
+                # the min value of right subtree is successor
+                if node.has_right_child():
+                    succ = self.get_min(node.get_right_child())
+                else:
+                    succ = speculative_succ
+                break
+                            
+            ## If key is smaller than node-key, look into left subtree
+            elif key < node.get_key():
+                speculative_succ = node.get_key()
+                node = node.get_left_child()
 
-        ## Base case
+            ## If key is larger than node-key, look into right subtree
+            else:
+                node = node.get_right_child()
+
+        return succ
+
+    def get_predecessor(self, node, key):
+        """ 
+        - This method finds predecessor of a node k with given key without the parent pointer.
+        - Algorithm steps
+            1. Starting from root node, the algorithm keeps track of 'speculative predecessor' for the case
+            where k's left subtree is empty. 
+            2. Easy Case:
+                If k's left subtree is non-empty,
+                It returns max-key in the left subtree.
+            3. Otherwise- difficult case:
+                Speculation is correct, and it returns speculative predecessor as a predecessor. 
+        - Benefit of speculation: When we reach difficult case, we already have an answer. We need not redo 
+          iteration to find predecessor from parents.
+        """
+        speculative_pred = None
+        pred = None
+        while (node):
+            ## If key is present at node
+            if node.get_key() == key:
+                # the max value of left subtree is predecessor
+                if node.has_left_child():
+                    pred = self.get_max(node.get_left_child())
+                else:
+                    pred = speculative_pred
+                break
+                            
+            ## If key is smaller than node-key, look into left subtree
+            elif key < node.get_key():
+                node = node.get_left_child()
+
+            ## If key is larger than node-key, look into right subtree
+            else:
+                speculative_pred = node.get_key()
+                node = node.get_right_child()
+            
+        return pred
+
+
+    def inorder_traversal(self, node=None):
+        """
+        Prints out keys in increasing order
+        """
         if node is None:
-            return
+            node = self.get_root()
+        # Recurse left
+        if node.has_left_child():
+            self.inorder_traversal(node.get_left_child())
+        print(node.get_key())
+        if node.has_right_child():
+            self.inorder_traversal(node.get_right_child())
+        return
 
-        ## If key is present at node
-        if node.get_key() == key:
-            # the min value of right subtree is successor
-            if node.has_right_child():
-                succ = self.get_min(node.get_right_child())
-                return succ
-
-
-        ## If key is smaller than node-key, look into left subtree
-        elif key < node.get_key():
-            return self.get_successor(node.get_left_child(), key)
-
-        ## If key is larger than node-key, look into right subtree
-        else:
-            return self.get_successor(node.get_right_child(), key)
 
 
     ### Print Tree (with the help of queue DS)
@@ -262,6 +411,7 @@ class Tree():
 #---------------------------------------------------------------------------------------------
 
 tree = Tree()
+## create a tree (insert)
 tree.insert(8)
 tree.insert(3)
 tree.insert(10)
@@ -287,9 +437,24 @@ max_val = tree.get_max()
 print("Min-val: {}".format(min_val))
 print("Max-val: {}".format(max_val))
 
+key_list = [1, 8, 3, 7, 13, 14]
 ## Get Successor
-succ1 = tree.get_successor(root, 7)
-print(succ1)
+for key in key_list:
+    succ = tree.get_successor(root, key)
+    print("successor of {} is {}".format(key, succ))
+
+## Get Predecessor
+for key in key_list:
+    pred = tree.get_predecessor(root, key)
+    print("predecessor of {} is {}".format(key, pred))
+
+
+## in-order traversal
+tree.inorder_traversal()
+
+## Delete a node
+tree.delete(6)
+print(tree)
 
 
 
