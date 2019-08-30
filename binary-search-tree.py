@@ -279,6 +279,7 @@ class Tree():
 
     def get_successor(self, node, key):
         """ 
+<<<<<<< HEAD
         - This method finds successor of a node k with given key without the parent pointer.
         - Algorithm steps
             1. Starting from root node, the algorithm keeps track of 'speculative successor' for the case
@@ -290,6 +291,13 @@ class Tree():
                 Speculation is correct, and it returns speculative successor as a successor. 
         - Benefit of speculation: When we reach difficult case, we already have an answer. We need not redo 
           iteration to find successor from parents.
+=======
+        - If node has right subtree, return max key from subtree
+        - 
+        TODO
+        - change to iterative
+        - add tentative succ 
+>>>>>>> 8fb0bf0db4da361b0b1c684d15ca0243315625fb
         """
         speculative_succ = None
         succ = None
