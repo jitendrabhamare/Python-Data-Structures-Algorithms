@@ -209,6 +209,7 @@ class Tree():
                     break
 
                 # Difficult case
+                """ TODO
                 if node.left and node.right:
                     print("yoyoyo")
                     # Find pred of left subtree
@@ -234,7 +235,7 @@ class Tree():
                         parent.right = pred
 
                     break
-
+                """        
 
             elif comparison == -1:
                 ## go left
