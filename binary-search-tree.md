@@ -1,5 +1,7 @@
 # Binary Search Tree (BST)
 
+![](<https://img.shields.io/badge/python3-passing-brightgreen.svg>)
+
 ***
 <ins>**Example**</ins></br>
 <img src="./Binary_search_tree.png" alt="drawing" width="250"/>
