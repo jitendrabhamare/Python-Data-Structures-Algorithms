@@ -69,7 +69,6 @@ Following methods are implemented.
 
 6. <ins>**get_successor**</ins>
     - This method finds successor of a node k with given key without the parent pointer.
-    - Algorithm steps
     1. Starting from root node, the algorithm keeps track of 'speculative successor' for the case
         - where k's right subtree is empty. 
     2. Easy Case:
@@ -81,9 +80,28 @@ Following methods are implemented.
           iteration to find successor from parents.
 
 7. <ins>**get_predecessor**</ins>
+    - This method finds predecessor of a node k with given key without the parent pointer.
+    1. Starting from root node, the algorithm keeps track of 'speculative predecessor' for the case
+        - where k's left subtree is empty. 
+    2. Easy Case:
+        - If k's left subtree is non-empty,
+        - It returns max-key in the left subtree.
+    3. Otherwise- difficult case:
+        - Speculation is correct, and it returns speculative predecessor as a predecessor. 
+    - **Benefit of speculation**: When we reach difficult case, we already have an answer. We need not redo 
+          iteration to find predecessor from parents.
+
 8. <ins>**inorder_traversal**</ins>
+    - Prints out keys in increasing order
+
 9. <ins>**sizeof**</ins>
+    - Returns total number of nodes under a node   
+    
 10. <ins>**order_statistic**</ins>
+    - Finds ith order statstic of a tree
+    
+    
+
 
 
 
