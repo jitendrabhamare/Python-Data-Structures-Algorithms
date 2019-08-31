@@ -45,9 +45,41 @@ Following methods are implemented.
     - Compare the insert-node with each node and accordingly traverse through the tree and insert 
 
 3. <ins>**delete**</ins>
+    - binary search for new_key (k) 
+     1. **Easy case**: if k has no children
+        - Just delete k's node from tree. Done.
+     2. **Medium case**: if k's node has one child
+        - Just "splice out" k's node.
+        - Unique child assumes position previously held by k's node
+     3. **Difficult case**: k's node has two children
+        - Compute k'e predecessor (l).
+        - swap k with l.
+
 4. <ins>**get_min**</ins>
+    - Get min from the node. By default, it starts from the root. 
+    - Start at the node. 
+    - Follow left child pointer until you cannot anymore.
+    - Return the last key found
+
 5. <ins>**get_max**</ins>
+    - Get max from the node. By default, it starts from the root. 
+    - Start at the node. 
+    - Follow right child pointer until you cannot anymore.
+    - Return the last key found
+
 6. <ins>**get_successor**</ins>
+    - This method finds successor of a node k with given key without the parent pointer.
+    - Algorithm steps
+    1. Starting from root node, the algorithm keeps track of 'speculative successor' for the case
+        - where k's right subtree is empty. 
+    2. Easy Case:
+        - If k's right subtree is non-empty,
+        - It returns min-key in the right subtree.
+    3. Otherwise- difficult case:
+        - Speculation is correct, and it returns speculative successor as a successor. 
+    - **Benefit of speculation**: When we reach difficult case, we already have an answer. We need not redo 
+          iteration to find successor from parents.
+
 7. <ins>**get_predecessor**</ins>
 8. <ins>**inorder_traversal**</ins>
 9. <ins>**sizeof**</ins>
