@@ -37,7 +37,6 @@ class Node(object):
         self.key   = key
         self.left  = None
         self.right = None
-        self.size = 0
 
     """ basic methods """
 
@@ -360,8 +359,36 @@ class Tree():
         if node.has_right_child():
             self.inorder_traversal(node.get_right_child())
         return
+    
+    def sizeof(self, node):
+        """
+        Return total number of nodes under a node
+        """
+        if node is None:
+            return 0
+        return 1 + self.sizeof(node.left) + self.sizeof(node.right)
+
+    def order_statistic(self, i, node=None):
+        """
+        Finds ith order statstic of a tree
+        """
+        if node is None:
+            node = self.get_root()
+
+        s = self.sizeof(node.left)
+        
+        if s == i-1:
+            return node.get_key()
+
+        elif s >= i:
+            return self.order_statistic(i, node.left)
+
+        else:
+            return self.order_statistic(i-s-1, node.right)
 
 
+        
+        
 
     ### Print Tree (with the help of queue DS)
     def __repr__(self):
@@ -450,6 +477,17 @@ tree.inorder_traversal()
 ## Delete a node
 tree.delete(6)
 print(tree)
+
+
+## sizeof
+size = tree.sizeof(root)
+print("size of tree: {}".format(size))
+
+
+## order statistic
+for i in range(1,10):
+    order = tree.order_statistic(i)
+    print("{} th order statistic of tree: {}".format(i, order))
 
 
 
