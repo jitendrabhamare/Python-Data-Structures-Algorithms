@@ -37,6 +37,7 @@ class Node(object):
         self.key   = key
         self.left  = None
         self.right = None
+        self.size = 0
 
     """ basic methods """
 
@@ -209,33 +210,26 @@ class Tree():
                     break
 
                 # Difficult case
-                """ TODO
                 if node.left and node.right:
-                    print("yoyoyo")
-                    # Find pred of left subtree
+                    print("DIfficult case -yo")
+                    # Find k's predecessor 
                     pred_parent = node
                     pred = node.left
                     while(pred.right):
                         pred_parent = pred
                         pred = pred.right
-                    print("pred: {}".format(pred))
                     
-                    # swap node and pred
-                    pred.right = node.right
-                    pred.left = node.left
-                    if pred_parent.right == pred:
-                        pred_parent.right = None    
-                    else:
+                    # swap keys of node and pred
+                    pred.key, node.key = node.key, pred.key
+
+                    # remove pred
+                    if pred_parent.left == pred:
                         pred_parent.left = None
-
-
-                    if parent.left == node:
-                        parent.left = pred
-                    else:
-                        parent.right = pred
-
+                    if pred_parent.right == pred:
+                        pred_parent.right = None
+                   
                     break
-                """        
+
 
             elif comparison == -1:
                 ## go left
