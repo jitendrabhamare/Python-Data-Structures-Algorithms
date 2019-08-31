@@ -36,6 +36,23 @@ in the right sub-tree have keys larger than the node key.
 <ins>**BST Implementation**</ins>
 - [here](./binary-search-tree.py)
 
+Following methods are implemented. 
+1. <ins>**search**</ins>
+    - Traverse left/right child recursively as needed.
+    - Return True if finds else False
+
+2. <ins>**insert**</ins>
+    - Compare the insert-node with each node and accordingly traverse through the tree and insert 
+
+3. <ins>**delete**</ins>
+4. <ins>**get_min**</ins>
+5. <ins>**get_max**</ins>
+6. <ins>**get_successor**</ins>
+7. <ins>**get_predecessor**</ins>
+8. <ins>**inorder_traversal**</ins>
+9. <ins>**sizeof**</ins>
+10. <ins>**order_statistic**</ins>
+
 
 
     
