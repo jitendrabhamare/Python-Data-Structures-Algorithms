@@ -8,12 +8,9 @@ The input file describes a set of jobs with positive and integral weights and le
 [job_2_weight] [job_2_length]</br>
 ...</br>
 
-Aim is to run the greedy algorithm that schedules jobs in decreasing order of 
+Aim is to run the greedy algorithm that schedules jobs in decreasing order of difference (w - l) and ratio (w/l)
+in order to minimize the weighted sum of completion times.
 1. The difference (weight - length) </br> 
     [solution](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/comp_time_diff.py)
 2. The ratio (weight/length) </br>
     [solution](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/comp_time_ratio.py)
-
-
-
-
