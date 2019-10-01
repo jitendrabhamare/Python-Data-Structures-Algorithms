@@ -12,3 +12,4 @@
 - [Kosaraju's Two-Pass Algorithm](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/Kosaraju-scc.md)
 - [Dijkstra's Shortest Path Algorithm](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/dijkstra_shortest_path_algo.py)
 - [Greedy Algorithm: Completion Time](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/GreedyAlgoCompTime.md)
+- [Prim's MST Algorithm](https://github.com/jitendrabhamare/Python-Data-Structures-Algorithms/blob/master/PrimsAlgo.md)
