@@ -223,9 +223,9 @@ class Tree():
 
                     # remove pred
                     if pred_parent.left == pred:
-                        pred_parent.left = None
+                        pred_parent.left = node.left
                     if pred_parent.right == pred:
-                        pred_parent.right = None
+                        pred_parent.right = node.left
                    
                     break
 
